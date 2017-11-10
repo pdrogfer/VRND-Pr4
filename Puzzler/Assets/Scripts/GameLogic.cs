@@ -3,17 +3,70 @@ using System.Collections;
 
 public class GameLogic : MonoBehaviour
 {
+	public GameObject player;
 	public GameObject startUI, restartUI;
+	public GameObject startPoint, playPoint, restartPoint;
+
+	void Start()
+	{
+		// Update 'player' to be the camera's parent gameobject, i.e. GvrEditorEmulator
+		// Required because GVR resets camera position to 0, 0, 0.
+		player = player.transform.parent.gameObject;
+
+		// Move player to the start position.
+		player.transform.position = startPoint.transform.position;
+	}
+
+	void Update()
+	{
+		if (Input.GetMouseButtonDown(0) && player.transform.position == playPoint.transform.position)
+		{
+			PuzzleSuccess ();
+		}
+	}
+
+	public void StartPuzzle()
+	{
+		ToggleUI ();
+		iTween.MoveTo (player,
+			iTween.Hash (
+				"position", playPoint.transform.position,
+				"time", 2, 
+				"easetype", "linear"
+			)
+		);
+	}
+
+	// Reset the puzzle sequence.
+	public void ResetPuzzle()
+	{
+		player.transform.position = startPoint.transform.position;
+		ToggleUI ();
+	}
+
+	// Do this when the player solves the puzzle.
+	public void PuzzleSuccess()
+	{
+		iTween.MoveTo (player,
+			iTween.Hash (
+				"position", restartPoint.transform.position,
+				"time", 4,
+				"easetype", "linear"
+			)
+		);
+	}
 
 	public void ToggleUI()
-	{
-		startUI.SetActive(!startUI.activeSelf);
-		restartUI.SetActive(!restartUI.activeSelf);
+	{ 
+		startUI.SetActive (!startUI.activeSelf);
+		restartUI.SetActive (!restartUI.activeSelf);
 	}
 
-	// Placeholder method to prevent compiler errors caused by this method being called from LightUp.cs.
+	// Placeholder method to prevent commpiler errors caused by 
+	// this method being called from LightUp.cs.
 	public void PlayerSelection(GameObject sphere)
 	{
-		// Will be completed later in the course.
+		// Will be commpleted later in the course.
 	}
+
 }
