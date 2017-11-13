@@ -1,7 +1,7 @@
 
 # Puzzler Project by Pedro Gonzalez
 
-![alt text](https://github.com/pdrogfer/VRND-Pr4/blob/master/Documentation/Screenshot_puzzler.jpg)
+![Puzzler screeshot](https://github.com/pdrogfer/VRND-Pr4/blob/master/Documentation/Screenshot_puzzler.jpg)
 
 ## Introduction
 
@@ -44,16 +44,23 @@ Once the UI panels were ready, user tested them. She found they were legible and
 User suggested a darker default color in the orbs, because it was difficult to see when they were activated (that changes to white, but the original color was indeed too clear). 
 
 ## Breakdown of final piece
-Click to see the video
-[![Puzzler Video](https://www.youtube.com/upload_thumbnail?v=8SgJK9R_D2M&t=1&ts=1510592236998)](https://www.youtube.com/watch?v=8SgJK9R_D2M&feature=youtu.be)
+![start UI](https://github.com/pdrogfer/VRND-Pr4/blob/master/Documentation/start_UI.png)  
+The user is presented with a welcome UI panel, where it needs to click a button to start the adventure. Then it transitions into the dungeon. Once there, the orbs will play a random sequence of sounds, lighting up at the same time. 
+![walls](https://github.com/pdrogfer/VRND-Pr4/blob/master/Documentation/wall_and_ligth.png)  
+A misterious background ambient noise, the dim lights and colors set the moody atmosphere. If the user makes a mistake, an ugly sound will notify that. And the sequence will replay, until the player succeeds. 
+![end UI](https://github.com/pdrogfer/VRND-Pr4/blob/master/Documentation/end_UI.png)  
+Then a new transition takes him/her out of the dungeon, where a new panel offers the possibility to replay again.
+
+Click to see the full video
+[![Video](https://www.youtube.com/upload_thumbnail?v=8SgJK9R_D2M&t=1&ts=1510592236998)](https://www.youtube.com/watch?v=8SgJK9R_D2M&feature=youtu.be)
 
 ## Conclusion
-
-
-
+This project has been very interesting, going through all the stages of design, development and testing of a VR game. Although in a miniature scale, it contains all the basic elements, and it was a lot of fun!
 
 ## Versions
 - Unity 2017.1.0
 - GVR Unity SDK v1.60.0
 - iTween v2.0.7
 
+
+*Pedro Gonzalez, November 2017*
